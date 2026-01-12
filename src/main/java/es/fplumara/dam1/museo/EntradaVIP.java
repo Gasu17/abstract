@@ -2,7 +2,7 @@ package es.fplumara.dam1.museo;
 
 import java.time.LocalDate;
 
-public class EntradaVIP extends Entrada {
+public  class EntradaVIP extends Entrada implements ConAccesoRapido{
 
 
     private String zonaVIP;
@@ -12,5 +12,11 @@ public class EntradaVIP extends Entrada {
         super(ID,precioBase,fecha);
         this.zonaVIP = zonaVIP;
         this.nivelPrioridad = nivelPrioridad;
+    }
+
+
+    @Override
+    public int prioridadAcceso() {
+        return this.nivelPrioridad;
     }
 }
