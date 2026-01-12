@@ -23,6 +23,10 @@ public class Main {
      double recaudacionConDescuento = 0;
      int contadorAccesoRapido = 0;
 
+     // for(Entrada  : entradas){
+        // preciofinal += entrada.getPrecioBase();
+
+    }
 
 
-}
+
