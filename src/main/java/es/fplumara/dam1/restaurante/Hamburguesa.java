@@ -11,8 +11,8 @@ public class Hamburguesa extends ProductoMenu implements Personalizable {
 
     public Hamburguesa (String id, String nombre, Double precioBase,String tipoCarne ) throws IllegalAccessException {
         super (id,nombre,precioBase);
-        if(tipoCarne.isBlank()){
-            throw new IllegalAccessException("tipoCarne no puede ser ni nulo ni vacio");
+        if(tipoCarne.isBlank() || tipoCarne == null){
+            throw new IllegalArgumentException("tipoCarne no puede ser ni nulo ni vacio");
         }
         this.tipoCarne = tipoCarne   ;
 
@@ -20,7 +20,7 @@ public class Hamburguesa extends ProductoMenu implements Personalizable {
 
     @Override
     public void añadirExtra(String nombreExtra, double coste) {
-        if (nombreExtra.isBlank() ){
+        if (nombreExtra.isBlank() || nombreExtra == null ){
             throw new IllegalArgumentException("nombreExtra no puede ser nulo ni vacio");
         }
         if (coste <0){

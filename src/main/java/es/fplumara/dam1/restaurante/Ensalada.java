@@ -9,7 +9,7 @@ public class Ensalada extends ProductoMenu implements Personalizable , Aptopara{
     private List<Extra> extras = new ArrayList<>();
 
 
-    protected Ensalada(String id, String nombre, Double precioBase,String size) throws IllegalAccessException {
+    private Ensalada(String id, String nombre, Double precioBase,String size) throws IllegalAccessException {
         super(id, nombre, precioBase);
         if (size == null || size.isBlank()){
             throw new IllegalArgumentException("El tamaño no puede estar vacio");
@@ -36,14 +36,15 @@ public class Ensalada extends ProductoMenu implements Personalizable , Aptopara{
     public double preciofinal() {
         Double totalExtras = 0.00;
         Double precioFinal =0.00;
+        Double Base = this.precioBase;
 
         for (int i = 0; i < extras.size(); i++) {
             totalExtras += extras.get(i).getCoste();
         }
         if (size.equalsIgnoreCase("Grande")){
-            this.precioBase += 2;
+            Base += 2;
         }
-        return precioFinal =  this.precioBase + totalExtras;
+        return precioFinal =  Base + totalExtras;
     }
 
     @Override

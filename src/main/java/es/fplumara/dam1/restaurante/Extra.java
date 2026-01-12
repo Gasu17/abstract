@@ -5,6 +5,8 @@ public class Extra {
     private double coste;
 
     public Extra(String nombreExtra, double coste) {
+        this.nombreExtra = nombreExtra;
+        this.coste = coste;
     }
 
     public String getNombreExtra() {

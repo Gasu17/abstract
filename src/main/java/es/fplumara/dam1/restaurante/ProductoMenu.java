@@ -11,7 +11,7 @@ public abstract class  ProductoMenu {
         this.precioBase = precioBase;
 
         if (id == null || id.isBlank()){
-        throw new IllegalAccessException("Este valor no puede estar vacio");
+        throw new IllegalArgumentException("Este valor no puede estar vacio");
         }
 
     }

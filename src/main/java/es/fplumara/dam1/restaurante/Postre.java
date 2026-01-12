@@ -10,7 +10,7 @@ private boolean esCasero;
     public Postre(String id, String nombre, Double precioBase, boolean esCasero) throws IllegalAccessException {
         super(id, nombre, precioBase);
         if (id == null || id.isBlank()){
-            throw new IllegalAccessException("Este valor no puede estar vacio");
+            throw new IllegalArgumentException("Este valor no puede estar vacio");
         }
         this.esCasero= esCasero;
     }
